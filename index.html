@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenai – AI Health Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #2f855a;
+      --bg: #f9fafb;
+      --text: #111;
+      --text-light: #444;
+    }
+  
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+  
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: #e6f2ea;
+    }
+  
+    header img {
+      max-width: 160px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    header p {
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+  
+    .cta-button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  
+    section {
+      padding: 2.5rem 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+  
+    h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .feature {
+      background: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      font-size: 1rem;
+    }
+  
+    .email-signup {
+      text-align: center;
+    }
+  
+    .email-signup {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+}
+  
+    .email-form input {
+      padding: 0.6rem 1rem;
+      width: 90%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+  
+    .email-form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  
+    /* Desktop adjustments */
+    @media(min-width: 768px) {
+      header {
+        padding: 2.5rem 3rem;
+      }
+  
+      section {
+        padding: 2rem 3rem;
+      }
+  
+      .features {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+  
+      .feature {
+        flex: 1;
+        text-align: center;
+      }
+  
+      .email-form {
+        flex-direction: row;
+        justify-content: center;
+      }
+  
+      .email-form input {
+        border-radius: 0.5rem 0 0 0.5rem;
+        flex: 1;
+      }
+  
+      .email-form button {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+  
+      footer {
+        padding: 1rem;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <img src="kenai-logo-transparent.png" alt="Kenai Logo" />
+    <h1>See The Whole You.</h1>
+    <p>Kenai is your AI-powered personal guide to understanding your health and wellness with clarity and care.</p>
+  </header>
+
+  <section>
+    <div class="features">
+      <div class="feature">🔍 Track biomarkers with real-time insight</div>
+      <div class="feature">🧠 Understand trends with AI-powered analysis</div>
+      <div class="feature">💡 Get clear, actionable recommendations</div>
+    </div>
+  </section>
+
+  <section class="email-signup">
+    <h2>Stay in the Loop</h2>
+    <form id="waitlist-form" class="email-form">
+        <input type="email" id="email" placeholder="Your email" required />
+        <button type="submit">Join the waitlist</button>
+      </form>
+  </section>
+
+  <footer>
+    Arogya Labs © 2025 | Built with care
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("waitlist-form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        if (!email || !email.includes("@")) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+  
+        // Simulate a submission
+        alert(`Thanks for joining the Kenai waitlist!\nWe’ll be in touch at: ${email}`);
+        
+        // Clear the form
+        form.reset();
+  
+        // Optionally, add an API POST request here
+        // fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }) });
+      });
+    });
+  </script>
+  
+</body>
+</html>
